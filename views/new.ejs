@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <p>Preencha os dados abaixo para salvar o cliente.</p>
+    <form action="/edit/<%= doc._id %>" method="POST">
+        <p>
+            <label>Nome: <input type="text" name="nome" value="<%= doc.nome %>" /></label>
+        </p>
+        <p>
+            <label>Idade: <input type="number" name="idade" value="<%= doc.idade %>" /></label>
+        </p>
+        <p>
+            <label>Sexo: <input type="text" name="sexo" value="<%= doc.sexo %>" /></label>
+        </p>
+        <p>
+            <label for="uf">UF:
+                <select id="uf" name="uf">
+                    <option value="RS">RS</option>
+                    <option value="SC">SC</option>
+                    <option value="PR">PR</option>
+                    <option value="SP">SP</option>
+                    <option value="MG">MG</option>
+                    <option value="BA">BA</option>
+                    <!-- coloque os estados que quiser -->
+                </select>
+            </label>
+        </p>
+        <p>
+            <a href="/">Cancelar</a> | <input type="submit" value="Salvar" />
+        </p>
+    </form>
+</body>
+
+</html>
